@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'fontGame';
+    src: url('./font/pony.ttf');
+}
+
+.bookingMovie {
+    font-family: 'fontGame';
+    background-image: url(./img/bgmovie.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    color: #fff;
+}
+
+.ghe {
+    border: 3px solid orange;
+    width: 45px;
+    height: 35px;
+    font-size: 12px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.gheDuocChon {
+    border: 3px solid orange;
+    background: orange;
+    color: #000;
+    cursor: no-drop !important;
+    border-radius: 5px;
+    width: 45px;
+    height: 35px;
+}
+
+.gheDangChon {
+    background: rgb(109, 238, 109);
+    border: 3px solid rgb(109, 238, 109);
+    color: #000;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 45px;
+    height: 35px;
+}
+
+.rowNumber {
+    width: 45px;
+    height: 35px;
+    background: none;
+    border: none;
+    margin-left: 16.5px;
+    font-size: 30px;
+    color: yellow;
+}
+
+.first-row {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.firstChar {
+    color: yellow;
+    font-size: 35px;
+    margin-right: 0px;
+}
+
+.screen {
+    border-bottom: 50px solid rgb(255, 159, 95);
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    height: 100%;
+    width: 90%;
+    filter: drop-shadow(4px 30px 20px rgba(255, 255, 255, 0.5));
+    font-size: 25px;
+    color: #fff;
+}
+
+.chair-row {
+    display: flex;
+    gap: 16.5px;
+    align-items: center;
+}
+
+.type {
+    min-width: 65px;
+}

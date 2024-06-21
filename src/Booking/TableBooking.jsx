@@ -1,6 +1,8 @@
 import { Popconfirm, message } from 'antd';
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck, faX } from '@fortawesome/free-solid-svg-icons';
 import { TYPE_COMPLETE, TYPE_DELETED } from './actionType/constant';
 
 class TableBooking extends Component {
@@ -30,30 +32,39 @@ class TableBooking extends Component {
                                             okText="YES"
                                             cancelText="NO"
                                         >
-                                            <button className="btn btn-danger">X</button>
+                                            <button className="btn btn-danger">
+                                                <FontAwesomeIcon icon={faX}
+                                                    className="fa-sm" />
+                                            </button>
                                         </Popconfirm>
                                     </td>
                                 </tr>
                             )
                         })}
+                        <tr>
+                            <th scope="col" className='fs-5 text-danger'>Total</th>
+                            <td className='fs-5 text-danger'>
+                                {bookingList.reduce((total, item) => {
+                                    total += item.gia;
+                                    return total;
+                                }, 0)} VND
+                            </td>
+                            <td>
+                                {bookingList.length > 0 && (
+                                    <button
+                                        className="btn btn-success"
+                                        onClick={onComplete}
+                                    >
+                                        <FontAwesomeIcon icon={faCheck}
+                                            className="fa-sm" />
+                                    </button>
+                                )}
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
                 <div className='text-center'>
-                    <div className='fs-2 text-danger'>
-                        Total: {bookingList.reduce((total, item) => {
-                            total += item.gia;
-                            return total;
-                        }, 0)} VND
-                    </div>
 
-                    {bookingList.length > 0 && (
-                        <button
-                            className="fs-5 py-3 px-5 btn btn-success"
-                            onClick={onComplete}
-                        >
-                            Submit
-                        </button>
-                    )}
                 </div>
             </div>
         )
